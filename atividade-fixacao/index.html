@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <h3>Escreva com a primeira letra maiúscula</h1>
+
+	<input type="text" id="objeto" name="objeto">
+	<button id="addBtn" class="btn bg-danger">Adicionar</button>
+	<button id="ordenarBtn" class="btn bg-danger">Ordenar</button>
+
+	<script>
+		var objetos = ['Cadeira', 'Impressora', 'Garfo'];
+		var addBtn= document.getElementById('addBtn');
+		var ordenarBtn = document.getElementById('ordenarBtn');
+		var objeto = document.getElementById('objeto');
+
+		addBtn.addEventListener('click', function() {
+			var novoObjeto = document.getElementById('objeto').value;
+			if (novoObjeto === '') {
+				alert('Informe um valor válido');
+				return;
+			}
+			if (objetos.indexOf(novoObjeto) !== -1) {
+				alert('Objeto já foi adicionado');
+				return;
+			}
+			objetos.push(novoObjeto);
+			console.log(objetos);
+			objeto.value = '';
+		});
+
+		ordenarBtn.addEventListener('click', function() {
+			console.log(objetos.sort())
+		});
+	</script>
+</body>
+</html>
